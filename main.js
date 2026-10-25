@@ -1,9 +1,7 @@
 const cube=document.querySelector('#cube'),roll=document.querySelector('#roll'),result=document.querySelector('#result'),jumper=document.querySelector('#jumper');
 const rotations={1:[-16,-22],2:[-106,-22],3:[-16,-112],4:[-16,68],5:[74,-22],6:[-16,158]};
-const patterns={1:[5],2:[1,9],3:[1,5,9],4:[1,3,7,9],5:[1,3,5,7,9],6:[1,3,4,6,7,9]};
-for(const face of document.querySelectorAll('.face')){const n=Number(face.dataset.number);face.innerHTML='<span class="face-corner a">❧</span><span class="face-corner b">❧</span><span class="face-corner c">❧</span><span class="face-corner d">❧</span>'+Array.from({length:9},(_,i)=>'<i class="'+(patterns[n].includes(i+1)?'pip':'')+'"></i>').join('');}
 let current=[74,-22],soundOn=true,audio;
-function transform(r){return 'rotateX('+r[0]+'deg) rotateY('+r[1]+'deg)';}
+function transform(r){return 'rotateX(-22deg) rotateY(-28deg) rotateX('+(r[0]+16)+'deg) rotateY('+(r[1]+22)+'deg)';}
 cube.style.transform=transform(current);
 // Rejection sampling removes modulo bias, giving every face equal probability.
 export function randomFace(){const v=new Uint32Array(1);do{crypto.getRandomValues(v);}while(v[0]>=4294967292);return v[0]%6+1;}
