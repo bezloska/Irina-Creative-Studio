@@ -8,3 +8,30 @@
 @media(max-width:500px){.landscape{background-size:100% 100%;background-position:center}.frame{display:none}.experience{height:320px}.controls{margin-top:8px}.world{height:752px}}
 
 @media(min-width:801px){.experience{height:370px}.controls{margin-top:12px}}
+/* Mobile layout: preserve the original artwork's natural proportions. */
+@media(max-width:800px){
+ :root{--cube:150px;--half:75px}
+ .world{height:660px;min-height:660px;padding-top:max(48px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom));background:#030916}
+ .landscape{background-size:contain;background-position:center 56%;background-repeat:no-repeat}
+ .brand{height:114px}
+ .original-logo{width:280px;height:auto;max-height:none;max-width:100%}
+ .experience{height:300px;width:100%;margin-top:6px}
+ .orbit{width:270px;height:150px;top:70px}
+ .orbit-two{width:250px}
+ .controls{margin-top:0}
+ .roll{width: min(296px,100%);height:auto;aspect-ratio:526 / 98;min-height:48px;background-size:contain;touch-action:manipulation}
+ .sound{min-width:44px;min-height:44px;touch-action:manipulation}
+ .result{margin-top:16px}
+}
+@media(max-width:500px){
+ :root{--cube:120px;--half:60px}
+ .world{height:650px;min-height:650px;padding:58px 10px max(20px,env(safe-area-inset-bottom));border-radius:24px}
+ .brand{height:105px}
+ .original-logo{width:230px;height:auto;max-height:none}
+ .experience{height:280px;margin-top:6px}
+ .scene{margin-top:0}
+ .orbit{width:230px;height:138px;top:72px}
+ .orbit-two{width:215px}
+ .result{width:290px;font-size:20px;min-height:64px}
+ .result strong{font-size:38px}
+}
